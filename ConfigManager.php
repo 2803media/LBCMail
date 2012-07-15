@@ -4,6 +4,7 @@ class Alert {
     public $email;
     public $id;
     public $title;
+    public $suspend = 0;
     public $url;
     public $interval = 30;
     public $time_last_ad = 0;
@@ -26,6 +27,7 @@ class Alert {
             "email" => $this->email,
             "id" => $this->id,
             "title" => $this->title,
+            "suspend" => $this->suspend,
             "url" => $this->url,
             "interval" => $this->interval,
             "time_last_ad" => $this->time_last_ad,

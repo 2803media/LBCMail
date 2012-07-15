@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($alert->email)) {
         $errors["email"] = "Ce champ est obligatoire.";
     }
+    if (!isset($_POST["suspend"])) {
+        $alert->suspend = 0;
+    }
     if (empty($alert->url)) {
         $errors["url"] = "Ce champ est obligatoire.";
     }
@@ -122,6 +125,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <dd>
                 <textarea id="cities" name="cities" cols="30" rows="10"><?php
                     echo htmlspecialchars($alert->cities) ?></textarea>
+            </dd>
+            <dt><label for="suspend">Suspendre</label></dt>
+            <dd>
+                <input type="checkbox" name="suspend" value="1"<?php echo ($alert->suspend == 1)?' checked="checked"':''; ?> />Suspendre cette alerte
             </dd>
             <dt>&nbsp;</dt>
             <dd><input type="submit" value="Enregistrer" /></dd>
