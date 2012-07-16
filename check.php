@@ -35,7 +35,7 @@ foreach ($files AS $file) {
             $alert->time_updated = 0;
         }
         if (((int)$alert->time_updated + (int)$alert->interval*60) > $currentTime) {
-        /   continue;
+           continue;
         }
         elseif ((int)$alert->suspend == 1) {
             continue;
