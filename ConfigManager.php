@@ -6,7 +6,7 @@ class Alert {
     public $title;
     public $suspend = 0;
     public $url;
-    public $interval = 30;
+    public $interval = 180;
     public $time_last_ad = 0;
     public $time_updated = 0;
     public $price_min = -1;
